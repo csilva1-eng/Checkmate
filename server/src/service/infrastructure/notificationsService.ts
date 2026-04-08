@@ -108,7 +108,7 @@ export class NotificationsService implements INotificationsService {
 	};
 
 	private sendNotifications = async (monitor: Monitor, monitorStatusResponse: MonitorStatusResponse, decision: MonitorActionDecision) => {
-		const notificationIds = decision.notificationReason === "escalation" ? monitor.escalationNotifications ?? [] : monitor.notifications ?? [];
+		const notificationIds = decision.notificationReason === "escalation" ? (monitor.escalationNotifications ?? []) : (monitor.notifications ?? []);
 		if (!notificationIds.length) {
 			this.logger.warn({
 				message: `No notification targets configured for ${decision.notificationReason || "notification"}`,

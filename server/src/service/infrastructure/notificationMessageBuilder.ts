@@ -93,7 +93,12 @@ export class NotificationMessageBuilder implements INotificationMessageBuilder {
 		}
 	}
 
-	private buildContent(type: NotificationType, monitor: Monitor, monitorStatusResponse: MonitorStatusResponse, decision: MonitorActionDecision): NotificationContent {
+	private buildContent(
+		type: NotificationType,
+		monitor: Monitor,
+		monitorStatusResponse: MonitorStatusResponse,
+		decision: MonitorActionDecision
+	): NotificationContent {
 		if (decision.notificationReason === "escalation") {
 			return this.buildEscalationContent(monitor, monitorStatusResponse);
 		}

@@ -766,10 +766,8 @@ const CreateMonitorPage = () => {
 			/>
 
 			<ConfigBox
-				title={"Escalation Rules"}
-				subtitle={
-					"If the monitor stays down for the specified time, notify additional channels"
-				}
+				title={t("pages.createMonitor.form.escalation.title")}
+				subtitle={t("pages.createMonitor.form.escalation.subtitle")}
 				rightContent={
 					<>
 						<Controller
@@ -787,7 +785,7 @@ const CreateMonitorPage = () => {
 												: Number(event.target.value) * 60000
 										)
 									}
-									fieldLabel={"Escalation after (minutes)"}
+									fieldLabel={t("pages.createMonitor.form.escalation.interval.label")}
 									placeholder={" "}
 									fullWidth
 									error={!!fieldState.error}
